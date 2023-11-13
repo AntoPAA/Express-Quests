@@ -9,6 +9,9 @@ const app = express();
 const movieHandlers = require("./controllers/movieControllers");
 app.put("/api/movies/:id", movieHandlers.updateMovie);
 
+const userHandlers = require("./controllers/userControllers");
+app.put("/api/users/:id", userHandlers.updateUser);
+
 app.use(express.json());
 
 app.post("/api/movies", validateMovie, movieControllers.postMovie);
