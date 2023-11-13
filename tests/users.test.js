@@ -71,8 +71,8 @@ describe("POST /api/users", () => {
   });
 });
 
-describe("PUT /api/movies/:id", () => {
-  it("should edit movie", async () => {
+describe("PUT /api/users/:id", () => {
+  it("should edit user", async () => {
     const newUser = {
       firstname: "Jax",
       lastname: "Dorms",
