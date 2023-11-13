@@ -6,6 +6,7 @@ const validateUser = require("./middlewares/validateUser");
 
 const app = express();
 
+const movieHandlers = require("./controllers/movieControllers");
 app.put("/api/movies/:id", movieHandlers.updateMovie);
 
 app.use(express.json());
