@@ -6,6 +6,8 @@ const validateUser = require("./middlewares/validateUser");
 
 const app = express();
 
+app.put("/api/movies/:id", movieHandlers.updateMovie);
+
 app.use(express.json());
 
 app.post("/api/movies", validateMovie, movieControllers.postMovie);
