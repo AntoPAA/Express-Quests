@@ -10,6 +10,8 @@ const movieHandlers = require("./controllers/movieControllers");
 app.put("/api/movies/:id", movieHandlers.updateMovie);
 app.delete("/api/movies/:id", movieHandlers.deleteMovie);
 
+const userHandlers = require("./controllers/userControllers");
+app.put("/api/users/:id", userHandlers.updateUser);
 app.delete("/api/users/:id", userControllers.deleteUsers);
 
 app.use(express.json());

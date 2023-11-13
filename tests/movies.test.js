@@ -155,3 +155,31 @@ describe("POST /api/movies", () => {
     expect(response.status).toEqual(500);
   });
 });
+
+describe("DELETE /api/movies/:id", () => {
+  it("should delete movie", async () => {
+    const newMovie = {
+      title: "Inception",
+      director: "Christopher Nolan",
+      year: "2010",
+      color: true,
+      duration: 162,
+    };
+
+    const id = await request(app).post("/api/movies").send(newMovie);
+
+    const responseDelete = await request(app).delete(`/api/movies/${id}`);
+
+    expect(responseDelete.status).toEqual(204);
+
+    const responseGet = await request(app).get(`/api/movies/${id}`);
+
+    expect(responseGet.status).toEqual(404);
+  });
+
+  it("le film n'existe pas", async () => {
+    const response = await request(app).delete("/api/movies/0");
+
+    expect(response.status).toEqual(404);
+  });
+});
