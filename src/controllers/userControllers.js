@@ -1,7 +1,7 @@
 const database = require("../../database");
 
 const getUsers = (req, res) => {
-  let sql = "select * from movies";
+  let sql = "select * from users";
   const sqlValues = [];
 
   if (req.query.language != null) {

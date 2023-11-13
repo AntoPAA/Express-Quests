@@ -132,7 +132,7 @@ describe("PUT /api/users/:id", () => {
     expect(response.status).toEqual(500);
   });
 
-  it("should return no user", async () => {
+  it("pas d'uitlisateur", async () => {
     const newUser = {
       firstname: "Jack",
       lastname: "Eron",
