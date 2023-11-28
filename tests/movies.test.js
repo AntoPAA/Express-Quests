@@ -1,5 +1,5 @@
 const request = require("supertest");
-
+const database = require("../database");
 const app = require("../src/app");
 
 describe("PUT /api/movies/:id", () => {

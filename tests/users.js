@@ -113,14 +113,24 @@ describe("PUT /api/users/:id", () => {
       id
     );
     [userInDatabase] = resultSelect;
-    const [userInDatabase] = result;
+    const [userInDatabase] = resultat;
 
     expect(userInDatabase).toHaveProperty("id");
-    expect(userInDatabase).toHaveProperty("firstname", updatedUser.firstname);
-    expect(userInDatabase).toHaveProperty("lastname", updatedUser.lastname);
-    expect(userInDatabase).toHaveProperty("email", updatedUser.email);
-    expect(userInDatabase).toHaveProperty("city", updatedUser.city);
-    expect(userInDatabase).toHaveProperty("language", updatedUser.language);
+
+    expect(userInDatabase).toHaveProperty("firstname");
+    expect(userInDatabase.firstname).toStrictEqual(updatedUser.firstname);
+
+    expect(userInDatabase).toHaveProperty("lastname");
+    expect(userInDatabase.lastname).toStrictEqual(updatedUser.lastname);
+
+    expect(userInDatabase).toHaveProperty("email");
+    expect(userInDatabase.email).toStrictEqual(updatedUser.email);
+
+    expect(userInDatabase).toHaveProperty("city");
+    expect(userInDatabase.city).toStrictEqual(updatedUser.city);
+
+    expect(userInDatabase).toHaveProperty("language");
+    expect(userInDatabase.language).toStrictEqual(updatedUser.language);
   });
   it("should return an error", async () => {
     const userWithMissingProps = { title: "Marie" };
